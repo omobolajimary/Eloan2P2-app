@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 22, 2020 at 04:56 PM
+-- Generation Time: Oct 22, 2020 at 05:05 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -37,6 +37,51 @@ CREATE TABLE `admin` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `borrowers_table`
+--
+
+CREATE TABLE `borrowers_table` (
+  `order_id` int(5) NOT NULL,
+  `amount_borrowed` int(7) NOT NULL,
+  `borrowed_date` date NOT NULL,
+  `return_date` date NOT NULL,
+  `user_id` int(4) UNSIGNED ZEROFILL NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `creditors_table`
+--
+
+CREATE TABLE `creditors_table` (
+  `creditor_id` int(4) UNSIGNED ZEROFILL NOT NULL,
+  `first_name` text NOT NULL,
+  `surname` text NOT NULL,
+  `address` varchar(100) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `loan_history`
+--
+
+CREATE TABLE `loan_history` (
+  `order_id` int(4) NOT NULL,
+  `user_id` int(4) UNSIGNED ZEROFILL NOT NULL,
+  `creditor_id` int(4) UNSIGNED ZEROFILL NOT NULL,
+  `date_borrowed` date NOT NULL,
+  `return_date` date NOT NULL,
+  `amount` int(7) NOT NULL,
+  `status` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -62,6 +107,27 @@ ALTER TABLE `admin`
   ADD PRIMARY KEY (`userid`);
 
 --
+-- Indexes for table `borrowers_table`
+--
+ALTER TABLE `borrowers_table`
+  ADD PRIMARY KEY (`order_id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
+-- Indexes for table `creditors_table`
+--
+ALTER TABLE `creditors_table`
+  ADD PRIMARY KEY (`creditor_id`);
+
+--
+-- Indexes for table `loan_history`
+--
+ALTER TABLE `loan_history`
+  ADD KEY `order_id` (`order_id`),
+  ADD KEY `creditor_id` (`creditor_id`),
+  ADD KEY `loan_history_ibfk_1` (`user_id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -78,10 +144,38 @@ ALTER TABLE `admin`
   MODIFY `userid` int(5) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `borrowers_table`
+--
+ALTER TABLE `borrowers_table`
+  MODIFY `order_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1000;
+
+--
+-- AUTO_INCREMENT for table `creditors_table`
+--
+ALTER TABLE `creditors_table`
+  MODIFY `creditor_id` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `user_id` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `borrowers_table`
+--
+ALTER TABLE `borrowers_table`
+  ADD CONSTRAINT `borrowers_table_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
+
+--
+-- Constraints for table `loan_history`
+--
+ALTER TABLE `loan_history`
+  ADD CONSTRAINT `loan_history_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
