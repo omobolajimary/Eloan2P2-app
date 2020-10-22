@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 15, 2020 at 01:04 PM
+-- Generation Time: Oct 22, 2020 at 03:56 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -37,24 +37,11 @@ CREATE TABLE `admin` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `creditors`
---
-
-CREATE TABLE `creditors` (
-  `userid` int(5) NOT NULL,
-  `first_name` text NOT NULL,
-  `surname` text NOT NULL,
-  `date_of_birth` date NOT NULL,
-  `email` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
+  `user_id` int(4) UNSIGNED ZEROFILL NOT NULL,
   `first_name` text NOT NULL,
   `surname` text NOT NULL,
   `date_of_birth` date NOT NULL,
@@ -75,16 +62,10 @@ ALTER TABLE `admin`
   ADD PRIMARY KEY (`userid`);
 
 --
--- Indexes for table `creditors`
---
-ALTER TABLE `creditors`
-  ADD PRIMARY KEY (`email`);
-
---
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`email`);
+  ADD PRIMARY KEY (`user_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -95,6 +76,12 @@ ALTER TABLE `users`
 --
 ALTER TABLE `admin`
   MODIFY `userid` int(5) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `user_id` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
