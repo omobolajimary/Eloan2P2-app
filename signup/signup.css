@@ -1,0 +1,144 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: ivory;
+    font-family: sans-serif;
+    display: flexbox;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin-left: auto;
+    margin-right:  auto;
+    width: 1000px;
+
+
+}
+
+
+.container {
+    background-color: lavender ;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px;
+    overflow: hidden;
+    width: 400px;
+    max-width: 100%;
+}
+
+.header {
+    background-color: whitesmoke;
+    border-bottom: wheat;
+    padding: 20px 40px ;
+    
+}
+
+.header h2{
+     margin: 0;   
+    
+
+}
+
+.form{
+    padding: 30px 40px;
+
+}
+
+.form-control{
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+
+}
+
+.form-control label{
+     display: inline;
+     margin-bottom: 5px;
+
+}
+
+.form-control input{
+    border: 2px solid ;
+    border-radius: 4px;
+    display: block;
+    font-family: inherit;
+    font-size: 14px;
+    padding: 10px;
+    width: 100%;
+} 
+
+.Address{
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+
+}
+
+.Address label{
+     display; inset-inline-start: ;
+     margin-bottom: 5px;
+
+}
+
+.Address input{
+    border: 2px solid ;
+    border-radius: 4px;
+    display: block;
+    font-family: inherit;
+    font-size: 14px;
+    padding: 10px;
+    width: 100%;
+} 
+
+.form-control.success input{
+    border-color: lightgreen;
+
+
+}
+
+.form-control.error input{
+    border-color: red;
+
+
+}
+.form-control i {
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    visibility: hidden;
+
+}     
+.form-control.success i.fa-check-circle{
+     color: springgreen;
+     visibility: visible;
+
+}
+
+.form-control.error i.fa-exclamation-circle{
+    color: red;
+    visibility: visible;
+}
+.form-control small {
+    visibility: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.form-control.error small{
+    color: red;
+    visibility: visible;
+}
+
+.form button{
+    background-color: magenta;
+    border: 2px solid ;
+    border-radius: 4px;
+    color: mediumspringgreen;
+    display: block;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+
+}                                                                                         
