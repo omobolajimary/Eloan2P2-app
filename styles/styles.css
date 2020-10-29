@@ -1,0 +1,72 @@
+/* default browser styles reset */
+*{
+  margin:0px;
+  padding:0px;
+  box-sizing: border-box;
+}
+/* main colors */
+:root{
+  /* primary colors */
+  --primaryDarkBlue:hsl(233,26%,24%);
+  --primaryLimeGreen:hsl(136,65%,51%);
+  --primaryBrightCyan:hsl(192,70%,51%);
+  /* neutral colors */
+  --grayishBlue:hsl(233,8%,62%);
+  --lightGrayishBlue:hsl(220,16%,96%);
+  --veryLightGray:hsl(0,0%,98%);
+  --white:hsl(0,0%,100%);
+  /* addins*/
+  --mainTransition:all 0.2s ease-in;
+  --mainSpacing:0.1rem;
+  /* -o-transition:all 0.3s linear ;
+  -moz-transition:all 0.3s linear ;
+  -webkit-transition:all 0.3s linear ; */
+}
+/* to attain smooth scrool */
+html{
+  scroll-behavior: smooth;
+}
+body{
+  font-family: 'Public Sans', sans-serif;
+  overflow-x: hidden;
+}
+/* styles for main container */
+.container{
+  background:var(--lightGrayishBlue);
+  width:1366px;
+  overflow-x: hidden;
+  max-width:100%;
+  /* max-width: calc(100% - 10px); */
+  margin:0 auto;
+  /* margin-top:70px; */
+  /* margin:auto; */
+}
+/* end of styles for main container */
+/* styles for logo */
+.logo{
+  color:var(--primaryDarkBlue);
+  letter-spacing: 1.5;
+  font-weight: 700;
+  font-size: 1.5em;
+  font-family: 'Shrikhand', cursive;
+}
+.logo a{
+  color:var(--primaryBrightCyan);
+  text-decoration: none;
+}
+.footer-logo{
+  color:var(--primaryDarkBlue);
+  letter-spacing: 1.5;
+  font-weight: 700;
+  font-size: 1.5em;
+  font-family: 'Shrikhand', cursive;
+}
+.footer-logo a{
+  color:var(--grayishBlue);
+  text-decoration: none;
+}
+/* end of styles for logo */
+/* styles for attribution */
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
