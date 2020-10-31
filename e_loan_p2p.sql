@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 22, 2020 at 05:05 PM
+-- Generation Time: Oct 31, 2020 at 10:41 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -90,11 +90,19 @@ CREATE TABLE `users` (
   `first_name` text NOT NULL,
   `surname` text NOT NULL,
   `date_of_birth` date NOT NULL,
-  `phone_number` int(11) NOT NULL,
+  `phone_number` varchar(11) NOT NULL,
   `address` varchar(100) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`user_id`, `first_name`, `surname`, `date_of_birth`, `phone_number`, `address`, `email`, `password`) VALUES
+(0014, 'Olu', 'Abosede', '1995-10-12', '32767', '13, Kikelomo street, Lagos', 'javie11@yahoo.com', 'wweeeee'),
+(0023, 'William', 'Teju', '1993-12-10', '07099221111', '17, Oyakilome street, Aguda, Lagos.', 'williamej@hotmail.co.uk', 'Willie12');
 
 --
 -- Indexes for dumped tables
@@ -159,7 +167,7 @@ ALTER TABLE `creditors_table`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- Constraints for dumped tables
