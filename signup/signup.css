@@ -131,10 +131,10 @@ body {
 }
 
 .form button{
-    background-color: magenta;
+    background-color: gray;
     border: 2px solid ;
     border-radius: 4px;
-    color: mediumspringgreen;
+    color: black;
     display: block;
     font-family: inherit;
     font-size: 16px;
